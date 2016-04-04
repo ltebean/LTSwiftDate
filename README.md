@@ -1,37 +1,47 @@
-![LTInfiniteScrollView](https://cocoapod-badges.herokuapp.com/v/LTInfiniteScrollView/badge.png)
+![LTSwiftDate](https://cocoapod-badges.herokuapp.com/v/LTSwiftDate/badge.png)
 
-## Demo
-##### 1. You can apply animation to each view during the scroll:
-![LTInfiniteScrollView](https://raw.githubusercontent.com/ltebean/LTInfiniteScrollView/master/demo/demo.gif)
+## String & NSDate conversion
 
-##### 2. The iOS 9 task switcher animation can be implemented in ten minutes with the support of this lib:
-![LTInfiniteScrollView](https://raw.githubusercontent.com/ltebean/LTInfiniteScrollView/master/demo/task-switcher-demo.gif)
-
-
-##### 3. The fancy menu can also be implemented easily:
-![LTInfiniteScrollView](https://raw.githubusercontent.com/ltebean/LTInfiniteScrollView/master/demo/menu-demo.gif)
-
-##### 4. Vertical scroll is also supported:
-![LTInfiniteScrollView](https://raw.githubusercontent.com/ltebean/LTInfiniteScrollView/master/demo/vertical-scroll.gif)
-
-## Usage
-
-Create the scroll view by:
-```objective-c
-self.scrollView = [[LTInfiniteScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 200)];
-[self.view addSubview:self.scrollView];
-self.scrollView.dataSource = self;
-[self.scrollView reloadDataWithInitialIndex: 0];
+NSDate to String
+```swift
+NSDate.toString(format: "yyyy/MM/dd")
 ```
 
-Then implement `LTInfiniteScrollViewDataSource` protocol:
-```objective-c
-@protocol LTInfiniteScrollViewDataSource<NSObject>
-- (UIView *)viewAtIndex:(NSInteger)index reusingView:(UIView *)view;
-- (NSInteger)numberOfViews;
-- (NSInteger)numberOfVisibleViews;
-@end
+String to NSDate
+```swift
+"2016/04/03".toDate(format: "yyyy/MM/dd")
 ```
+
+NSDate operation
+```swift
+let now = NSDate()
+let yesterday = now - 1.days
+let lastMonth = now - 1.months
+```
+
+NSDate comparison
+```swift
+let now = NSDate()
+let tomorror = now + 1.days
+if (now < tomorrow) {
+  ...
+}
+```
+
+NSDate short cut
+```swift
+let startOfDay = NSDate().startOfDay()
+let endOfDay = NSDate.endOfDay()
+
+```
+
+NSDate caculation
+```swift
+let now = NSDate()
+let tomorrow = now + 1.days
+let days = now.daysBeforeDate(tomorrow) // days will be 1
+```
+
 
 Sample code:
 ```objective-c
