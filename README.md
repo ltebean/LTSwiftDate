@@ -1,4 +1,10 @@
 ![LTSwiftDate](https://cocoapod-badges.herokuapp.com/v/LTSwiftDate/badge.png)
+## Installation
+```
+pod 'LTSwiftDate'
+```
+
+## How to use
 
 #### NSDate & String conversion
 
