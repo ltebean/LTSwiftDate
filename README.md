@@ -40,7 +40,7 @@ let endOfDay = now.endOfDay()
 
 ```
 
-NSDate caculation
+#### NSDate caculation
 ```swift
 let now = NSDate()
 let tomorrow = now + 1.days
