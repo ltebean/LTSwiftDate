@@ -48,9 +48,6 @@ public extension NSDate {
         return isEqualToDate(NSDate(), ignoreTime: true)
     }
     
-    public func toDateString() -> String {
-        return toString(format: "MMM d, yyyy")
-    }
 }
 
 
