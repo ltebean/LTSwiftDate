@@ -1,13 +1,13 @@
 ![LTSwiftDate](https://cocoapod-badges.herokuapp.com/v/LTSwiftDate/badge.png)
 
-#### String & NSDate conversion
+#### NSDate & String conversion
 
 NSDate to String
 ```swift
 NSDate().toString(format: "yyyy/MM/dd")
 ```
 
-#### String to NSDate
+String to NSDate
 ```swift
 "2016/04/03".toDate(format: "yyyy/MM/dd")
 ```
