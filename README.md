@@ -31,7 +31,7 @@ LTSwiftDate adds exension on `Int` to generate date components, it supports:
 * `years`
 
 
-You can manipulate a date as:
+Example:
 ```swift
 let now = NSDate()
 let nextMinute = now + 1.minutes
@@ -49,6 +49,7 @@ You can compare dates using:
 * `<=`
 * isEqualToDate
 
+Example:
 ```swift
 let now = NSDate()
 let tomorror = now + 1.days
