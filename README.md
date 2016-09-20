@@ -10,8 +10,8 @@ pod 'LTSwiftDate'
 
 NSDate to String
 ```swift
-let time = NSDate().toString(format: "MM/dd/yyyy") //  04/08/2016
-let time = NSDate().toString(format: "MMM d, H:mm a") //  Apr 8, 8:29 AM
+let time = Date().toString(format: "MM/dd/yyyy") //  04/08/2016
+let time = Date().toString(format: "MMM d, H:mm a") //  Apr 8, 8:29 AM
 ```
 
 String to NSDate
@@ -33,14 +33,14 @@ LTSwiftDate adds exension on `Int` to generate date components, it supports:
 
 Example:
 ```swift
-let now = NSDate()
+let now = Date()
 let nextMinute = now + 1.minutes
 let yesterday = now - 1.days
 let lastMonth = now - 1.months
 ...
 ```
 
-#### NSDate comparison
+#### Date comparison
 You can compare dates using:
 * `>`
 * `>=`
@@ -51,26 +51,26 @@ You can compare dates using:
 
 Example:
 ```swift
-let now = NSDate()
+let now = Date()
 let tomorror = now + 1.days
 if (now < tomorrow) {
   ...
 }
 
-now.isEqualToDate(now + 1.mins, ignoreTime=true) // true
+now.isEqual(toDate: now + 1.mins, ignoreTime=true) // true
 ```
 
-#### NSDate shortcut
+#### Date shortcut
 ```swift
-let now = NSDate()
+let now = Date()
 let startOfDay = now.startOfDay()
 let endOfDay = now.endOfDay()
 
 ```
 
-#### NSDate caculation
+#### Date caculation
 ```swift
-let now = NSDate()
+let now = Date()
 let tomorrow = now + 1.days
 let days = now.daysBeforeDate(tomorrow) // days will be 1
 ```
