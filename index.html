@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ltswiftdate by ltebean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ltswiftdate</h1>
+      <h2 class="project-tagline">Easy-to-use Date operation(Swift 3)</h2>
+      <a href="https://github.com/ltebean/LTSwiftDate" class="btn">View on GitHub</a>
+      <a href="https://github.com/ltebean/LTSwiftDate/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ltebean/LTSwiftDate/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://cocoapod-badges.herokuapp.com/v/LTSwiftDate/badge.png" alt="LTSwiftDate"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>pod 'LTSwiftDate'
+</code></pre>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<h4>
+<a id="nsdate--string-conversion" class="anchor" href="#nsdate--string-conversion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NSDate &amp; String conversion</h4>
+
+<p>NSDate to String</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> time <span class="pl-k">=</span> <span class="pl-c1">Date</span>().<span class="pl-c1">toString</span>(<span class="pl-c1">format</span>: <span class="pl-s"><span class="pl-pds">"</span>MM/dd/yyyy<span class="pl-pds">"</span></span>) <span class="pl-c">//  04/08/2016</span>
+<span class="pl-c"></span><span class="pl-k">let</span> time <span class="pl-k">=</span> <span class="pl-c1">Date</span>().<span class="pl-c1">toString</span>(<span class="pl-c1">format</span>: <span class="pl-s"><span class="pl-pds">"</span>MMM d, H:mm a<span class="pl-pds">"</span></span>) <span class="pl-c">//  Apr 8, 8:29 AM</span></pre></div>
+
+<p>String to NSDate</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-s"><span class="pl-pds">"</span>04/08/2016<span class="pl-pds">"</span></span>.<span class="pl-c1">toDate</span>(<span class="pl-c1">format</span>: <span class="pl-s"><span class="pl-pds">"</span>MM/dd/yyyy<span class="pl-pds">"</span></span>)</pre></div>
+
+<p>You can find the complete reference for the format string here: <a href="http://nsdateformatter.com/">http://nsdateformatter.com/</a></p>
+
+<h4>
+<a id="nsdate-operation" class="anchor" href="#nsdate-operation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NSDate operation</h4>
+
+<p>LTSwiftDate adds exension on <code>Int</code> to generate date components, it supports: </p>
+
+<ul>
+<li><code>seconds</code></li>
+<li><code>minutes</code></li>
+<li><code>hours</code></li>
+<li><code>days</code></li>
+<li><code>weeks</code></li>
+<li><code>years</code></li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> now <span class="pl-k">=</span> <span class="pl-c1">Date</span>()
+<span class="pl-k">let</span> nextMinute <span class="pl-k">=</span> now <span class="pl-k">+</span> <span class="pl-c1">1</span>.<span class="pl-smi">minutes</span>
+<span class="pl-k">let</span> yesterday <span class="pl-k">=</span> now <span class="pl-k">-</span> <span class="pl-c1">1</span>.<span class="pl-smi">days</span>
+<span class="pl-k">let</span> lastMonth <span class="pl-k">=</span> now <span class="pl-k">-</span> <span class="pl-c1">1</span>.<span class="pl-smi">months</span>
+<span class="pl-k">...</span></pre></div>
+
+<h4>
+<a id="date-comparison" class="anchor" href="#date-comparison" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Date comparison</h4>
+
+<p>You can compare dates using:</p>
+
+<ul>
+<li><code>&gt;</code></li>
+<li><code>&gt;=</code></li>
+<li><code>==</code></li>
+<li><code>&lt;</code></li>
+<li><code>&lt;=</code></li>
+<li>isEqualToDate</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> now <span class="pl-k">=</span> <span class="pl-c1">Date</span>()
+<span class="pl-k">let</span> tomorror <span class="pl-k">=</span> now <span class="pl-k">+</span> <span class="pl-c1">1</span>.<span class="pl-smi">days</span>
+<span class="pl-k">if</span> (now <span class="pl-k">&lt;</span> tomorrow) {
+  <span class="pl-k">...</span>
+}
+
+now.<span class="pl-c1">isEqual</span>(<span class="pl-c1">toDate</span>: now <span class="pl-k">+</span> <span class="pl-c1">1</span>.<span class="pl-smi">mins</span>, ignoreTime<span class="pl-k">=</span><span class="pl-c1">true</span>) <span class="pl-c">// true</span></pre></div>
+
+<h4>
+<a id="date-shortcut" class="anchor" href="#date-shortcut" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Date shortcut</h4>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> now <span class="pl-k">=</span> <span class="pl-c1">Date</span>()
+<span class="pl-k">let</span> startOfDay <span class="pl-k">=</span> now.<span class="pl-c1">startOfDay</span>()
+<span class="pl-k">let</span> endOfDay <span class="pl-k">=</span> now.<span class="pl-c1">endOfDay</span>()
+</pre></div>
+
+<h4>
+<a id="date-caculation" class="anchor" href="#date-caculation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Date caculation</h4>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> now <span class="pl-k">=</span> <span class="pl-c1">Date</span>()
+<span class="pl-k">let</span> tomorrow <span class="pl-k">=</span> now <span class="pl-k">+</span> <span class="pl-c1">1</span>.<span class="pl-smi">days</span>
+<span class="pl-k">let</span> days <span class="pl-k">=</span> now.<span class="pl-c1">daysBeforeDate</span>(tomorrow) <span class="pl-c">// days will be 1</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ltebean/LTSwiftDate">Ltswiftdate</a> is maintained by <a href="https://github.com/ltebean">ltebean</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
